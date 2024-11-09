@@ -5,6 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <!-- TODO: make dates consistent -->
 
+## [4.0.1]()
+
+- Patch (this should fix an issue with `npm publish`, perhaps?)
+
 ## [4.0.0](09-11-2024)
 
 ### Breaking changes

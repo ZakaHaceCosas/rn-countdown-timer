@@ -1,6 +1,6 @@
 {
   "name": "rn-countdown-timer",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "private": false,
   "description": "Lightweight React Native countdown timer component with color and progress animation based on SVG",
   "scripts": {
