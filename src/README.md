@@ -1,4 +1,4 @@
-# React Native Countdown Circle Timer
+# React Native Countdown Timer
 
 [![npm](https://img.shields.io/npm/v/react-native-countdown-circle-timer)](https://www.npmjs.com/package/react-native-countdown-circle-timer)
 [![npm](https://img.shields.io/npm/dw/react-native-countdown-circle-timer)](https://www.npmtrends.com/react-native-countdown-circle-timer)
@@ -18,11 +18,11 @@ React Native countdown timer component in a circle shape with color and progress
 
 ## Install
 
-```
+```bash
 yarn add react-native-countdown-circle-timer
 ```
 
-This component has a peer dependency on `react-native-svg` to draw the countdown circle. `react-native-svg` has to be installed and linked into your project.
+This component has a peer dependency on `react-native-svg` to draw the countdown circle, so `react-native-svg` (version `>=15.8.0`) has to be installed and linked into your project.
 
 ## Usage
 

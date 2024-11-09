@@ -3,11 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [4.0.0](Unreleased)
+<!-- TODO: make dates consistent -->
+
+## [4.0.0](09-11-2024)
 
 ### Breaking changes
 
 - Removed React support, making this a React Native only package. (Might be added back in the future).
+- Updated peer dependency on `react-native-svg`.
 
 ### Fix
 

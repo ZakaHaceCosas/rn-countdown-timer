@@ -11,13 +11,13 @@ A React Native countdown timer component in a circle shape with color and progre
 :european_castle: Fully customizable content in the center of the circle  
 :rocket: Support iOS and Android
 
-[![npm](https://img.shields.io/npm/v/react-native-countdown-circle-timer)](https://www.npmjs.com/package/react-native-countdown-circle-timer)
-[![npm](https://img.shields.io/npm/dw/react-native-countdown-circle-timer)](https://www.npmtrends.com/react-native-countdown-circle-timer)
+[![npm](https://img.shields.io/npm/v/rn-countdown-timer)](https://www.npmjs.com/package/rn-countdown-timer)
+[![npm](https://img.shields.io/npm/dw/rn-countdown-timer)](https://www.npmtrends.com/rn-countdown-timer)
 [![Codecov](https://img.shields.io/codecov/c/github/vydimitrov/react-countdown-circle-timer?flag=mobile)](https://app.codecov.io/gh/vydimitrov/react-countdown-circle-timer/tree/master/packages/mobile/src)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-native-countdown-circle-timer)](https://bundlephobia.com/result?p=react-native-countdown-circle-timer)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/rn-countdown-timer)](https://bundlephobia.com/result?p=rn-countdown-timer)
 
 ```bash
-pnpm add react-native-countdown-circle-timer
+pnpm add rn-countdown-timer
 ```
 
 This component has a peer dependency on `react-native-svg`. Read the [full documentation](https://github.com/vydimitrov/react-countdown-circle-timer/tree/master/packages/mobile#react-native-countdown-circle-timer) for the installation guide, as well as demos and use cases.
