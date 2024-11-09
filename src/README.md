@@ -1,13 +1,18 @@
 # React Native Countdown Timer
 
-[![npm](https://img.shields.io/npm/v/react-native-countdown-circle-timer)](https://www.npmjs.com/package/react-native-countdown-circle-timer)
+[![npm](https://img.shields.io/npm/v/rn-countdown-timer?style=for-the-badge)](https://www.npmjs.com/package/rn-countdown-timer)
+[![npm](https://img.shields.io/npm/dw/rn-countdown-timer?style=for-the-badge)](https://www.npmtrends.com/rn-countdown-timer)
+![Codecov](https://img.shields.io/codecov/c/github/ZakaHaceCosas/rn-countdown-timer?style=for-the-badge)
+<!-- [![npm](https://img.shields.io/npm/v/react-native-countdown-circle-timer)](https://www.npmjs.com/package/react-native-countdown-circle-timer)
 [![npm](https://img.shields.io/npm/dw/react-native-countdown-circle-timer)](https://www.npmtrends.com/react-native-countdown-circle-timer)
 [![Codecov](https://img.shields.io/codecov/c/github/vydimitrov/react-countdown-circle-timer?flag=mobile)](https://app.codecov.io/gh/vydimitrov/react-countdown-circle-timer/tree/master/packages/mobile/src)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-native-countdown-circle-timer)](https://bundlephobia.com/result?p=react-native-countdown-circle-timer)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-native-countdown-circle-timer)](https://bundlephobia.com/result?p=react-native-countdown-circle-timer) -->
 
 React Native countdown timer component in a circle shape with color and progress animation.
 
-<img src="https://user-images.githubusercontent.com/10707142/66097204-ca68c200-e59d-11e9-9b70-688409755aaa.gif" width="200"> <img src="https://user-images.githubusercontent.com/10707142/65935516-a0869280-e419-11e9-9bb0-40c4d1ef2bbe.gif" width="200"> <img src="https://user-images.githubusercontent.com/10707142/65963815-cfbdf380-e45b-11e9-809d-970174e88914.gif" width="200">
+![Demo 1](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo1.gif)
+![Demo 2](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo2.gif)
+![Demo 3](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo3.gif)
 
 ## Features
 
@@ -19,7 +24,7 @@ React Native countdown timer component in a circle shape with color and progress
 ## Install
 
 ```bash
-yarn add react-native-countdown-circle-timer
+pnpm install rn-countdown-timer
 ```
 
 This component has a peer dependency on `react-native-svg` to draw the countdown circle, so `react-native-svg` (version `>=15.8.0`) has to be installed and linked into your project.
@@ -32,7 +37,7 @@ Check the [Expo Snack](https://snack.expo.io/@dimitrov/countdown-circle-timer?pl
 
 ```jsx
 import { Text } from 'react-native'
-import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
+import { CountdownCircleTimer } from 'rn-countdown-timer'
 
 const UrgeWithPleasureComponent = () => (
   <CountdownCircleTimer
@@ -51,7 +56,7 @@ const UrgeWithPleasureComponent = () => (
 The package exports a hook `useCountdown`, which accepts the same props as the component and returns all props needed to render your own circle.
 
 ```jsx
-import { useCountdown } from 'react-native-countdown-circle-timer'
+import { useCountdown } from 'rn-countdown-timer'
 
 const {
   path,
