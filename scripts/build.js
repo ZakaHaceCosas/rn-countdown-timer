@@ -16,7 +16,7 @@ esbuild
     format: 'esm',
   })
   .then(() => {
-    fs.copyFile('../src/shared/types.ts', './lib/index.d.ts', (err) => {
+    fs.copyFile('./src/shared/types.ts', './lib/index.d.ts', (err) => {
       if (err) {
         throw err
       }
