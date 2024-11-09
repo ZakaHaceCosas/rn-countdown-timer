@@ -1,9 +1,8 @@
-import { waitFor } from '@testing-library/react'
-import { renderHook } from '@testing-library/react-hooks'
+import { waitFor, renderHook } from '@testing-library/react'
 import { getIsColorBetweenColors } from './utils'
 import type { Props } from './types'
 
-import { useCountdown } from '..'
+import { useCountdown } from '.'
 import { ColorRGB } from './types'
 
 describe('useCountdown', () => {

@@ -1,9 +1,7 @@
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import React from 'react'
 import { Text } from 'react-native'
-import { render } from '@testing-library/react-native'
-import { renderHook } from '@testing-library/react-hooks'
-import renderer from 'react-test-renderer'
+import { render, renderHook } from '@testing-library/react-native'
 
 import { CountdownCircleTimer, useCountdown } from '.'
 import type { Props } from '.'
@@ -15,41 +13,31 @@ const fixture: Props = {
 
 describe('CountdownCircleTimer', () => {
   it('renders with single color', () => {
-    const tree = renderer
-      .create(
-        <CountdownCircleTimer {...fixture}>
-          {({ remainingTime }) => <Text>{remainingTime}</Text>}
-        </CountdownCircleTimer>
-      )
-      .toJSON()
+    const tree = render(
+      <CountdownCircleTimer {...fixture}>
+        {({ remainingTime }) => <Text>{remainingTime}</Text>}
+      </CountdownCircleTimer>
+    ).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   it('renders with different trail stroke width', () => {
-    const tree = renderer
-      .create(
-        <CountdownCircleTimer
-          {...fixture}
-          trailStrokeWidth={16}
-          strokeWidth={14}
-        >
-          {({ remainingTime }) => <Text>{remainingTime}</Text>}
-        </CountdownCircleTimer>
-      )
-      .toJSON()
+    const tree = render(
+      <CountdownCircleTimer {...fixture} trailStrokeWidth={16} strokeWidth={14}>
+        {({ remainingTime }) => <Text>{remainingTime}</Text>}
+      </CountdownCircleTimer>
+    ).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   it('renders with isGrowing prop when it is set', () => {
-    const tree = renderer
-      .create(
-        <CountdownCircleTimer {...fixture} isGrowing>
-          {({ remainingTime }) => <Text>{remainingTime}</Text>}
-        </CountdownCircleTimer>
-      )
-      .toJSON()
+    const tree = render(
+      <CountdownCircleTimer {...fixture} isGrowing>
+        {({ remainingTime }) => <Text>{remainingTime}</Text>}
+      </CountdownCircleTimer>
+    ).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
@@ -69,7 +57,7 @@ describe('CountdownCircleTimer', () => {
   })
 
   it('does not render the animating path when the elapsed time is equal the duration', () => {
-    const tree = renderer.create(
+    const tree = render(
       <CountdownCircleTimer
         duration={0}
         colors="#abc"
