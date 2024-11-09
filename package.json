@@ -1,10 +1,9 @@
 {
-  "name": "countdown-circle-timer-monorepo",
-  "version": "3.2.1",
-  "private": true,
+  "name": "rn-countdown-timer",
+  "version": "4.0.0",
+  "private": false,
   "description": "Lightweight React Native countdown timer component with color and progress animation based on SVG",
   "scripts": {
-    "test-coverage": "pnpm recursive test-coverage",
     "build": "node scripts/build.js",
     "dev:push": "pnpm run build && yalc push",
     "test": "jest --collectCoverage",
@@ -23,8 +22,14 @@
     "clock",
     "SVG"
   ],
-  "author": "Vasil Dimitrov",
+  "author": "ZakaHaceCosas",
   "license": "MIT",
+  "contributors": [
+    {
+        "name": "Vasil Dimitrov",
+        "url": "https://github.com/vydimitrov"
+    }
+  ],
   "dependencies": {
     "use-elapsed-time": "3.0.4"
   },

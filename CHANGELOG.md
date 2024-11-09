@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0](Unreleased)
+
+### Breaking changes
+
+- Removed React support, making this a React Native only package. (Might be added back in the future).
+
+### Fix
+
+- Made the package compatible with latest version of React Native.
+
 ## [3.2.1](2023-03-15)
 
 ### Fix
@@ -71,7 +81,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Fix
 
-- Move types close to the web and mobile packages since TypeScript can not reexport submodules. Issue https://github.com/microsoft/TypeScript/issues/8305
+- Move types close to the web and mobile packages since TypeScript can not reexport submodules. Issue <https://github.com/microsoft/TypeScript/issues/8305>
 - Add README to mobile package
 
 ## [3.0.1](2022-01-11)
@@ -280,5 +290,5 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Implemented enhancements:**
 
-- Replace custom hook that handles animation loop with [useElapsedTime ](https://github.com/vydimitrov/use-elapsed-time)
+- Replace custom hook that handles animation loop with [useElapsedTime](https://github.com/vydimitrov/use-elapsed-time)
 - Add Changelog file
