@@ -13,10 +13,10 @@ esbuild
   .build({
     ...commonProps,
     outfile: pkg.main,
-    format: 'cjs',
+    format: 'esm',
   })
   .then(() => {
-    fs.copyFile('../shared/src/types.ts', './lib/index.d.ts', (err) => {
+    fs.copyFile('../src/shared/types.ts', './lib/index.d.ts', (err) => {
       if (err) {
         throw err
       }

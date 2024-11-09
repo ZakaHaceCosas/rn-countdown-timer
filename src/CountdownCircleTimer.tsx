@@ -2,8 +2,8 @@ import React from 'react'
 import { View } from 'react-native'
 import type { StyleProp, ViewStyle } from 'react-native'
 import Svg, { Path } from 'react-native-svg'
-import { useCountdown, getWrapperStyle, timeStyle } from '../shared/index'
-import type { Props } from '../shared/index';
+import { useCountdown, getWrapperStyle, timeStyle } from './shared/index'
+import type { Props } from './shared/index';
 
 const CountdownCircleTimer = (props: Props) => {
   const { children, duration, strokeLinecap, trailColor, trailStrokeWidth } =
