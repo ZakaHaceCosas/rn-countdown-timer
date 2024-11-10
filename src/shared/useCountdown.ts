@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useElapsedTime } from 'use-elapsed-time'
 import { getPathProps, getStartAt } from './utils'
 import type { Props, ColorFormat } from './types'
@@ -69,6 +69,7 @@ const getStroke = (props: Props, remainingTime: number): ColorFormat => {
 
 export const useCountdown = (props: Props) => {
   const {
+    key,
     duration,
     initialRemainingTime,
     updateInterval,
@@ -81,11 +82,17 @@ export const useCountdown = (props: Props) => {
     onComplete,
     onUpdate,
   } = props
+
   const remainingTimeRef = useRef<number>()
+  const [elapsedTime, setElapsedTime] = useState(0)
   const maxStrokeWidth = Math.max(strokeWidth, trailStrokeWidth ?? 0)
   const { path, pathLength } = getPathProps(size, maxStrokeWidth, rotation)
 
-  const { elapsedTime } = useElapsedTime({
+  useEffect(() => {
+    setElapsedTime(0)
+  }, [key])
+
+  const { elapsedTime: newElapsedTime } = useElapsedTime({
     isPlaying,
     duration,
     startAt: getStartAt(duration, initialRemainingTime),
@@ -116,10 +123,10 @@ export const useCountdown = (props: Props) => {
         : undefined,
   })
 
-  const remainingTimeRow = duration - elapsedTime
+  const remainingTimeRow = duration - newElapsedTime
 
   return {
-    elapsedTime,
+    elapsedTime: newElapsedTime,
     path,
     pathLength,
     remainingTime: Math.ceil(remainingTimeRow),
@@ -127,7 +134,7 @@ export const useCountdown = (props: Props) => {
     size,
     stroke: getStroke(props, remainingTimeRow),
     strokeDashoffset: linearEase(
-      elapsedTime,
+      newElapsedTime,
       0,
       pathLength,
       duration,

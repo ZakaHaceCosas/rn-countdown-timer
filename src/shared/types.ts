@@ -36,6 +36,8 @@ type OnComplete = {
 }
 
 export declare type Props = {
+  /** Optional, use it to restart the timer. Pass a stateful value, every time it changes, the timer will restart. */
+  key?: number
   /** Countdown duration in seconds */
   duration: number
   /** Set the initial remaining time if it is different than the duration */
