@@ -1,14 +1,16 @@
 # React Native Countdown Timer
 
-A React Native countdown timer component in a circle shape with color and progress animation. Originally made by [Vasil Dimitrov](https://github.com/vydimitrov), this is a fork to update it to the latest version of React Native. [His version](https://github.com/vydimitrov/react-countdown-circle-timer/tree/master) also supports standard React, by the way.
+A React Native countdown timer component in a circle shape with color and progress animation, **originally made by [Vasil Dimitrov](https://github.com/vydimitrov)**. This fork updates it to the latest version of React Native. *[His version](https://github.com/vydimitrov/react-countdown-circle-timer/tree/master), while slightly outdated, also supports standard React for websites, if that's what you're looking for*.
 
-![Demo 1](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo1.gif)
-![Demo 2](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo2.gif)
-![Demo 3](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo3.gif)
+<!--markdownlint-disable md033 -->
+<div>
+<img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo1.gif" alt="Demo 1" width="200">
+<img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo2.gif" alt="Demo 2" width="200">
+<img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo3.gif" alt="Demo 3" width="200">
+</div>
 
 [![npm](https://img.shields.io/npm/v/rn-countdown-timer?style=for-the-badge)](https://www.npmjs.com/package/rn-countdown-timer)
 [![npm](https://img.shields.io/npm/dw/rn-countdown-timer?style=for-the-badge)](https://www.npmtrends.com/rn-countdown-timer)
-![Codecov](https://img.shields.io/codecov/c/github/ZakaHaceCosas/rn-countdown-timer?style=for-the-badge)
 
 ## Features
 
