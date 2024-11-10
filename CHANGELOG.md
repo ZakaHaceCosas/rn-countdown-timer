@@ -1,7 +1,15 @@
-# Change Log
+<!-- markdownlint-disable md024 -->
+<!-- not important but uh i think i should make the changelog follow the same format everywhere -->
+# Changelog
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [4.0.3] (2024-11-10)
+
+### Features
+
+- Added `key` prop to the `useCountdown` hook, so the developer can restart the timer at any time.
 
 ## [4.0.0 - 4.0.2](2024-11-09)
 
@@ -141,12 +149,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - **mobile:** react-native ignore pattern in tests ([16cf3cc](https://github.com/ZakaHaceCosas/rn-countdown-timer/commit/16cf3ccab416d258ce50d6e1bfb8fdbad9bc31a0))
 
-# [2.5.0](https://github.com/ZakaHaceCosas/rn-countdown-timer/compare/v2.4.0...v2.5.0) (2021-02-15)
+## [2.5.0](https://github.com/ZakaHaceCosas/rn-countdown-timer/compare/v2.4.0...v2.5.0) (2021-02-15)
 
 ### Bug Fixes
 
-- change from or to null operator and other fixes suggested in PR. ([2e79ed3](https://github.com/ZakaHaceCosas/rn-countdown-timer/commit/2e79ed3480bb723715bd287ad4e4b001a87254d4))
-- the issue of stroke overflowing when trailStrokeWidth is different from strokeWidth ([b3d3aab](https://github.com/ZakaHaceCosas/rn-countdown-timer/commit/b3d3aab1d175bc95478efa7f0ebf3c3d50a66c37))
+- Change from or to null operator and other fixes suggested in PR. ([2e79ed3](https://github.com/ZakaHaceCosas/rn-countdown-timer/commit/2e79ed3480bb723715bd287ad4e4b001a87254d4))
+- The issue of stroke overflowing when trailStrokeWidth is different from strokeWidth ([b3d3aab](https://github.com/ZakaHaceCosas/rn-countdown-timer/commit/b3d3aab1d175bc95478efa7f0ebf3c3d50a66c37))
 
 ### Features
 
@@ -154,7 +162,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - add snapshots for trailStrokeWidth for web also ([ce12b54](https://github.com/ZakaHaceCosas/rn-countdown-timer/commit/ce12b5419a6810fbfe83bce4aa04dbd1630f04f8))
 - add test for trailStrokeWidth mobile ([67542b1](https://github.com/ZakaHaceCosas/rn-countdown-timer/commit/67542b171ad2cb041bf52d470af8142ec1d3ba3a))
 
-# [2.4.0](https://github.com/ZakaHaceCosas/rn-countdown-timer/compare/v2.3.12...v2.4.0) (2021-01-15)
+## [2.4.0](https://github.com/ZakaHaceCosas/rn-countdown-timer/compare/v2.3.12...v2.4.0) (2021-01-15)
 
 ### Bug Fixes
 
@@ -225,7 +233,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** An attempt to configure Lerna to create Github releases. No changes on component code.
 
-# 2.3.0 (2020-07-21)
+## 2.3.0 (2020-07-21)
 
 ### Features
 
@@ -293,5 +301,5 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Implemented enhancements:**
 
-- Replace custom hook that handles animation loop with [useElapsedTime](https://github.com/vydimitrov/use-elapsed-time)
-- Add Changelog file
+- Replace custom hook that handles animation loop with [useElapsedTime](https://github.com/vydimitrov/use-elapsed-time).
+- Add changelog file
