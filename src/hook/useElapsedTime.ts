@@ -1,5 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
-import { useIsomorphicEffect } from './useIsomorphicEffect'
+import { useState, useRef, useCallback, useLayoutEffect } from 'react'
 
 type MayBe<T> = T | null
 
@@ -105,7 +104,7 @@ export const useElapsedTime = ({
     [isPlaying, startAt]
   )
 
-  useIsomorphicEffect(() => {
+  useLayoutEffect(() => {
     onUpdate?.(displayTime)
 
     if (duration && displayTime >= duration) {
@@ -126,7 +125,7 @@ export const useElapsedTime = ({
     }
   }, [displayTime, duration])
 
-  useIsomorphicEffect(() => {
+  useLayoutEffect(() => {
     if (isPlaying) {
       requestRef.current = requestAnimationFrame(loop)
     }

@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks'
+import { renderHook, act, waitFor } from '@testing-library/react-native'
 import { useElapsedTime } from './useElapsedTime'
 import type { Props } from './useElapsedTime'
 
@@ -8,6 +8,7 @@ const setupHook = (props: Props) => renderHook(() => useElapsedTime(props))
 
 describe('useElapsedTime', () => {
   afterEach(() => {
+    jest.clearAllMocks()
     jest.restoreAllMocks()
   })
 
@@ -27,7 +28,7 @@ describe('useElapsedTime', () => {
 
   it('updates time with respect to updateInterval prop starting at the statAt value', async () => {
     const props = { isPlaying: true, startAt: 1, updateInterval: 2 }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBe(3), {
       timeout: 2200,
@@ -40,7 +41,7 @@ describe('useElapsedTime', () => {
 
   it('returns the elapsed time for duration of 1.2 seconds starting at 0.4 seconds', async () => {
     const props = { isPlaying: true, duration: 1.2, startAt: 0.4 }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     expect(result.current.elapsedTime).toBe(props.startAt)
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
@@ -48,7 +49,7 @@ describe('useElapsedTime', () => {
 
   it('returns the elapsed time for duration of 1.4 seconds starting at 0', async () => {
     const props = { isPlaying: true, duration: 1.4, startAt: 0 }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     expect(result.current.elapsedTime).toBe(props.startAt)
 
@@ -62,7 +63,7 @@ describe('useElapsedTime', () => {
 
   it('does not call onComplete if there is no duration provided', async () => {
     const props = { isPlaying: true, onComplete: jest.fn() }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     expect(result.current.elapsedTime).toBe(0)
 
@@ -78,7 +79,7 @@ describe('useElapsedTime', () => {
 
   it('fires onComplete when duration is reached', async () => {
     const props = { isPlaying: true, onComplete: jest.fn(), duration: 0.65 }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
     expect(props.onComplete).toHaveBeenCalledTimes(1)
@@ -87,7 +88,7 @@ describe('useElapsedTime', () => {
   it('resets timer and start over when onComplete returns shouldRepeat = true', async () => {
     const onComplete = jest.fn(() => ({ shouldRepeat: true }))
     const props = { isPlaying: true, duration: 0.48, onComplete }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
     expect(onComplete).toHaveBeenCalledTimes(1)
@@ -102,7 +103,7 @@ describe('useElapsedTime', () => {
     const setTimeoutSpy = jest.spyOn(window, 'setTimeout')
     const onComplete = jest.fn(() => ({ shouldRepeat: true, delay: 0.3 }))
     const props = { isPlaying: true, duration: 0.24, onComplete }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
     expect(onComplete).toHaveBeenCalledTimes(1)
@@ -116,13 +117,13 @@ describe('useElapsedTime', () => {
 
   it('starts and stops animation loop by toggling isPlaying', async () => {
     const props = { isPlaying: true, duration: 4 }
-    const { result, rerender, waitFor } = setupHook(props)
+    const { result, rerender } = setupHook(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBeGreaterThan(0.1))
     const currentTime = result.current.elapsedTime
 
     props.isPlaying = false
-    rerender()
+    rerender(props)
     expect(result.current.elapsedTime).toBe(currentTime)
 
     props.isPlaying = true
@@ -142,7 +143,7 @@ describe('useElapsedTime', () => {
       startAt: 0.5,
       onComplete,
     }
-    const { waitFor } = setupHook(props)
+    setupHook(props)
 
     await waitFor(() => expect(onComplete).toHaveBeenLastCalledWith(0.7))
     await waitFor(() => expect(onComplete).toHaveBeenLastCalledWith(1.9))
@@ -162,12 +163,12 @@ describe('useElapsedTime', () => {
 
   it('returns the new duration when it changes while the timer is playing', async () => {
     const props = { isPlaying: true, duration: 0.3 }
-    const { result, rerender, waitFor } = setupHook(props)
+    const { result, rerender } = setupHook(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBeGreaterThan(0.1))
 
     props.duration = 0.65
-    rerender()
+    rerender(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
   })
@@ -190,12 +191,12 @@ describe('useElapsedTime', () => {
       duration: 0.37,
       onComplete: jest.fn(() => ({ shouldRepeat: true })),
     }
-    const { rerender, waitFor } = setupHook(props)
+    const { rerender } = setupHook(props)
 
     await waitFor(() => expect(props.onComplete).toHaveBeenCalled())
 
     props.isPlaying = false
-    rerender()
+    rerender(props)
 
     expect(clearTimeoutMock).toHaveBeenCalled()
     expect(cancelAnimationFrameMock).toHaveBeenCalled()
@@ -203,7 +204,7 @@ describe('useElapsedTime', () => {
 
   it('starts playing again if reset is triggered after the duration is reached and isPlaying is still true', async () => {
     const props = { isPlaying: true, duration: 0.89, startAt: 0.25 }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
 
@@ -217,14 +218,14 @@ describe('useElapsedTime', () => {
 
   it('starts playing when the animation is paused after it is completed, reset is triggered and the animation starts again ', async () => {
     const props = { isPlaying: true, duration: 0.67 }
-    const { result, rerender, waitFor } = setupHook(props)
+    const { result, rerender } = setupHook(props)
 
     // animation is completed
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
 
     // stop animation
     props.isPlaying = false
-    rerender()
+    rerender(props)
 
     act(() => {
       result.current.reset()
@@ -232,7 +233,7 @@ describe('useElapsedTime', () => {
 
     // start animation
     props.isPlaying = true
-    rerender()
+    rerender(props)
 
     await waitFor(() => expect(result.current.elapsedTime).toBe(0))
     await waitFor(() => expect(result.current.elapsedTime).toBe(props.duration))
@@ -246,7 +247,7 @@ describe('useElapsedTime', () => {
       updateInterval: 1,
       onUpdate: jest.fn(),
     }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     await waitFor(
       () => expect(result.current.elapsedTime).toBe(1),
@@ -269,7 +270,7 @@ describe('useElapsedTime', () => {
     const newStartAt = 0.2
     const onComplete = jest.fn(() => ({ shouldRepeat: true, newStartAt }))
     const props = { isPlaying: true, duration: 1, startAt: 0.5, onComplete }
-    const { result, waitFor } = setupHook(props)
+    const { result } = setupHook(props)
 
     expect(result.current.elapsedTime).toBe(props.startAt)
     await waitFor(() => expect(result.current.elapsedTime).toBe(newStartAt))

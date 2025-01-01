@@ -30,9 +30,6 @@
         "url": "https://github.com/vydimitrov"
     }
   ],
-  "dependencies": {
-    "use-elapsed-time": "3.0.4"
-  },
   "devDependencies": {
     "@babel/core": "7.26.0",
     "@babel/runtime": "7.26.0",

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useElapsedTime } from 'use-elapsed-time'
+import { useElapsedTime } from '../hook'
 import { getPathProps, getStartAt } from './utils'
 import type { Props, ColorFormat } from './types'
 
