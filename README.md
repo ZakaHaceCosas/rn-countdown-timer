@@ -1,9 +1,11 @@
+<!--markdownlint-disable md033 -->
 # React Native Countdown Timer
 
-A React Native countdown timer component in a circle shape with color and progress animation, **originally made by [Vasil Dimitrov](https://github.com/vydimitrov)**. This fork updates it to the latest version of React Native. *[His version](https://github.com/vydimitrov/react-countdown-circle-timer/tree/master), while slightly outdated, also supports standard React for websites, if that's what you're looking for*.
+A React Native countdown timer component in a circle shape with color and progress animation, **originally made by [Vasil Dimitrov](https://github.com/vydimitrov)**. This fork updates it to the latest version of React Native.
 
-<!--markdownlint-disable md033 -->
-<div>
+*[His version](https://github.com/vydimitrov/react-countdown-circle-timer/tree/master), while outdated, also supports websites with standard React, if that's what you're looking for*.
+
+<div align="center">
 <img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo1.gif" alt="Demo 1" width="200">
 <img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo2.gif" alt="Demo 2" width="200">
 <img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo3.gif" alt="Demo 3" width="200">
@@ -23,4 +25,4 @@ A React Native countdown timer component in a circle shape with color and progre
 pnpm install rn-countdown-timer
 ```
 
-This component has a peer dependency on `react-native-svg`. Read the [full documentation](https://github.com/ZakaHaceCosas/rn-countdown-timer/tree/master/src#react-native-countdown-timer) for the installation guide, as well as demos and use cases.
+This component has a peer dependency on `react-native-svg`. Read the [full documentation](https://github.com/ZakaHaceCosas/rn-countdown-timer/blob/master/src/README.md) for the installation guide, as well as demos and use cases.

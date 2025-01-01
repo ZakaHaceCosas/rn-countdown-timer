@@ -1,18 +1,16 @@
+<!--markdownlint-disable md033 -->
 # React Native Countdown Timer
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo1.gif" alt="Demo 1" width="200">
+<img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo2.gif" alt="Demo 2" width="200">
+<img src="https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo3.gif" alt="Demo 3" width="200">
+</div>
 
 [![npm](https://img.shields.io/npm/v/rn-countdown-timer?style=for-the-badge)](https://www.npmjs.com/package/rn-countdown-timer)
 [![npm](https://img.shields.io/npm/dw/rn-countdown-timer?style=for-the-badge)](https://www.npmtrends.com/rn-countdown-timer)
-![Codecov](https://img.shields.io/codecov/c/github/ZakaHaceCosas/rn-countdown-timer?style=for-the-badge)
-<!-- [![npm](https://img.shields.io/npm/v/react-native-countdown-circle-timer)](https://www.npmjs.com/package/react-native-countdown-circle-timer)
-[![npm](https://img.shields.io/npm/dw/react-native-countdown-circle-timer)](https://www.npmtrends.com/react-native-countdown-circle-timer)
-[![Codecov](https://img.shields.io/codecov/c/github/vydimitrov/react-countdown-circle-timer?flag=mobile)](https://app.codecov.io/gh/vydimitrov/react-countdown-circle-timer/tree/master/packages/mobile/src)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-native-countdown-circle-timer)](https://bundlephobia.com/result?p=react-native-countdown-circle-timer) -->
 
 React Native countdown timer component in a circle shape with color and progress animation.
-
-![Demo 1](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo1.gif)
-![Demo 2](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo2.gif)
-![Demo 3](https://raw.githubusercontent.com/ZakaHaceCosas/rn-countdown-timer/refs/heads/master/img/demo3.gif)
 
 ## Features
 
