@@ -5,13 +5,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.4] (Unreleased)
+
+### Features
+
+- Remove dependency on `useElapsedTime` hook, including it inside of the package and exporting it. Original `use-elapsed-time` package is outdated.
+
 ## [4.0.3] (2024-11-10)
 
 ### Features
 
 - Added `key` prop to the `useCountdown` hook, so the developer can restart the timer at any time.
 
-## [4.0.0 - 4.0.2](2024-11-09)
+## [4.0.0 - 4.0.2] (2024-11-09)
 
 ### Breaking changes
 
