@@ -5,7 +5,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [4.0.4] (Unreleased)
+## [4.0.4] (2025-01-19)
 
 ### Features
 
